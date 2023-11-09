@@ -28,7 +28,7 @@ export default function App() {
           <Text style={styles.add}>{item.address}</Text>
         </View>
         <View style={{flex:1}}>
-        <TouchableOpacity onPress={()=>showFullName(`${item.name}${'\n'}${item.nickName}${'\n'}${item.address}${'\n'}${item.courseAndYear}`)}>
+        <TouchableOpacity onPress={()=>showFullName(`${'Name: '}${item.name}${'\n'}${'Nickname: '}${item.nickName}${'\n'}${'Address: '}${item.address}${'\n'}${'Course and Year: '}${item.courseAndYear}`)}>
           <Icon
             name="dots-three-horizontal"
             type="entypo"
