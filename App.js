@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, FlatList, TouchableOpacity, ScrollView }
 import { Icon } from '@rneui/themed';
 import Entypo from 'react-native-vector-icons/Entypo';
 import { users } from './info';
+import {App2} from './App2';
 
 export default function App() {
 
@@ -15,8 +16,9 @@ export default function App() {
       <Entypo/>
       <FlatList
         data={users}
-        keyExtractor={(index) => index.toString()}
+        keyExtractor={(index) => index.id.toString()}
         renderItem={({ item }) => (
+
         <View style={styles.user}>
           <Image
             style={styles.image}
@@ -27,6 +29,7 @@ export default function App() {
           <Text style={styles.name}>{item.name}</Text>
           <Text style={styles.add}>{item.address}</Text>
         </View>
+        
         <View style={{flex:1}}>
         <TouchableOpacity onPress={()=>showFullName(`${'Name: '}${item.name}${'\n'}${'Nickname: '}${item.nickName}${'\n'}${'Address: '}${item.address}${'\n'}${'Course and Year: '}${item.courseAndYear}`)}>
           <Icon
@@ -41,6 +44,7 @@ export default function App() {
   )}
     />
     </ScrollView>
+    <App2/>
     </View>
   );
 }
